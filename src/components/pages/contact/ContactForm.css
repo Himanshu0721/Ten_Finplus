@@ -1,1 +1,217 @@
 
+
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    
+    max-width: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 10%;
+
+    gap: 20px;
+    height: min-content;
+    overflow: visible;
+   
+    scroll-margin-top: 514px;
+    width: 1094px;
+    
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: #888888;
+  }
+  /* Placeholder styling for select elements */
+.contact-form select:invalid {
+  color: #b7b4b4; /* Placeholder color */
+}
+
+/* Ensuring selected options are visible */
+.contact-form select {
+  color: white; /* Text color for selected option */
+}
+
+/* Adjust focus behavior */
+.contact-form select:focus {
+  outline: 2px solid #333333; 
+}
+  
+  .contact-form button {
+    margin-top: 20px;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #201f1f;
+  }
+  
+  .bottom-section {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    position: relative;
+  }
+  
+  .waiting {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  
+  
+  .bottom-image {
+   
+    margin: 0 auto;
+    display: block;
+    width: 50px;
+    height: auto;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: cover;
+  }
+  
+  .footer-text {
+    text-align: center;
+    margin-top: 157px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.8;
+  }
+  
+  /* Media Queries */
+  @media screen and (min-width: 1440px) and (max-width: 1500px) {
+    .container {
+      width: 85%;
+      padding: 20px;
+      max-height: 85vh;
+      margin-left: 7.5%; /* Center alignment adjustment */
+    }
+  
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      font-size: 16px;
+    }
+  
+    .contact-form button {
+      font-size: 14px;
+    }
+  
+    .footer-text {
+      font-size: 1.7rem;
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+      width: 90%; /* Adjust container width */
+      padding: 20px;
+      max-height: 85vh; /* Maintain height proportion */
+      margin-left: 5%;
+    }
+  
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      font-size: 15px; /* Slightly larger inputs */
+    }
+  
+    .contact-form button {
+      font-size: 13px;
+    }
+  
+    .footer-text {
+      font-size: 1.6rem;
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .container {
+      width: 90%; 
+      padding: 15px;
+      max-height: 85vh; 
+      margin-left: 10px;
+    }
+  
+    .contact-form button {
+      font-size: 12px;
+    }
+  
+    .footer-text {
+      font-size: 1.4rem; 
+      margin-top: 10px
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 95%; 
+      padding: 15px;
+      
+      max-height: 85vh; 
+      margin-left: 10px;
+    }
+  
+    .contact-form button {
+      font-size: 12px;
+    }
+  
+    .footer-text {
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .container {
+      width: 95%;
+      padding: 10px;
+      max-height: 85vh; 
+      margin-left: 10px;
+    }
+  
+    .footer-text {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+  }
+  
