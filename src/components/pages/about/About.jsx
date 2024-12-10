@@ -91,7 +91,7 @@ function About() {
           <p>Our goal is to empower advisors to be efficient, precise, productive, and client-focused for maximum impact.</p>
         </div>
         <div className="footer-text">
-          <p>Enhance client experiences with Fortuna while streamlining and upgrading your back-office operations.</p>
+          <p>Enhance client experiences with Finplus while streamlining and upgrading your back-office operations.</p>
         </div>
       </div>
     </>
