@@ -12,14 +12,6 @@ function Home() {
     'Predictive Service "Stay Ahead of Client Needs"',
   ];
 
-  const logoList = [
-    "https://framerusercontent.com/images/Jb72cfGcBjahcFFFRXxwdF3ibDI.webp",
-    "https://framerusercontent.com/images/rZepMyzcrKB2SwdyziExcgQjaI.svg",
-    "https://framerusercontent.com/images/0QUsTBf7pmcNFMxgKb0omQd0Jy4.png?scale-down-to=512",
-    "https://framerusercontent.com/images/4iWdfJGoEeqvWM880Ee5YklBTE.png",
-    "https://framerusercontent.com/images/TqAPhsNlt96lA4kZ9dUxCFWhD8.webp",
-  ];
-
   const cardsData = [
     {
       headingThird: "~30%",
@@ -49,6 +41,30 @@ function Home() {
     "We're not here to follow the rules; we're here to alter them.",
   ];
 
+  const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariant = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const lines = [
+    { source: "Zoho", target: "Meeting notes" },
+    { source: "Salesforce", target: "Prospecting" },
+    { source: "Google meeting", target: "Onboarding" },
+    { source: "Outlook", target: "Planning" },
+    { source: "Redtail", target: "Review" },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -72,9 +88,13 @@ function Home() {
                 </p>
               </div>
               <div>
-                <div className={styles["fancy"]}>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={styles["fancy"]}
+                >
                   <button>Get early access</button>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </section>
@@ -120,23 +140,8 @@ function Home() {
           >
             <div className={styles["title-container"]}>
               <div className={styles["title"]}>
-                <h2>Built by engineers & supported by RIAs</h2>
+                <h2>Built by engineers & supported by TENs</h2>
               </div>
-            </div>
-            <div className={styles["logo-container"]}>
-              <section className={styles["logo-moving"]}>
-                <div className={styles["logo-container"]}>
-                  <div className={styles["container"]}>
-                    <ul className={styles["marquee"]}>
-                      {logoList.map((list, index) => (
-                        <li key={index}>
-                          <img src={list} width={200} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </section>
             </div>
           </motion.section>
 
@@ -217,6 +222,43 @@ function Home() {
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
             transition={{ duration: 0.8, ease: "easeInOut" }}
+            className={styles["animation-part"]}
+          >
+            <div className={styles["animation-container"]}>
+              <motion.div
+                variants={containerVariant}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="rounded-lg p-5  max-lg:w-[100%] max-sm:w-[100%] bg-gradient-to-l from-[#525252] to-[#1f1f1f]"
+              >
+                <div className="font-semibold max-sm:text-sm text-xl text-white">
+                  {lines.map((line, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between max-sm:gap-5 gap-44 p-4"
+                    >
+                      <motion.div variants={itemVariant}>
+                        {line.source}
+                      </motion.div>
+
+                      <motion.div variants={itemVariant}>
+                        {line.target}
+                      </motion.div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className={styles["seventh-section"]}
           >
             <div className={styles["seventh-title"]}>
@@ -261,6 +303,22 @@ function Home() {
               ))}
             </div>
           </motion.section>
+
+          <section className={styles["footer"]}>
+            <div className={styles["footer-content"]}>
+              <h1>
+                Use TEN Finplus to improve your back office and the customer
+                experience.
+              </h1>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles["fancy"]}
+              >
+                <button>Contact us</button>
+              </motion.div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
