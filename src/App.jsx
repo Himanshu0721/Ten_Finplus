@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/pages/home/Home'
-import Contact from './components/pages/contact/Contact'
+import Contact from './components/pages/contact/ContactForm'
 import About from './components/pages/about/About'
 
 function App() {
