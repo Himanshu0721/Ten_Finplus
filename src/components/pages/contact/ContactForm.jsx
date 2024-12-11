@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import ParticlesBackground from "../../ParticlesBackground";
 import "./ContactForm.css";
@@ -19,9 +17,43 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted: ", formData);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    // Add the required access key.
+    const payload = { ...formData, access_key: "4cf49b0d-2eaf-4235-8052-08089d57e7e9" };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Form Submitted Successfully:", result);
+        alert("Form submitted successfully!");
+        setFormData({
+          name: "",
+          workEmail: "",
+          country: "",
+          role: "",
+          importance: "",
+          questions: "",
+        });
+      } else {
+        console.error("Form Submission Error:", result);
+        alert("Form submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -31,7 +63,7 @@ const ContactForm = () => {
         <h1 style={{ color: "white", textAlign: "center", marginBottom: "20px" }}>
           {/* Contact */}
         </h1>
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={onSubmit}>
           Name
           <input
             type="text"
@@ -102,15 +134,12 @@ const ContactForm = () => {
           <button type="submit">Submit</button>
         </form>
         <div className="bottom-section">
-        <img
-           className="bottom-image"
-           src="https://framerusercontent.com/images/RBDm0msajwzWJTxSqFCD18cFta4.png"
-           alt="Decoration"
-        />
-          <p className="waiting">
-            
-            50+ people waiting...
-          </p>
+          <img
+            className="bottom-image"
+            src="https://framerusercontent.com/images/RBDm0msajwzWJTxSqFCD18cFta4.png"
+            alt="Decoration"
+          />
+          <p className="waiting">50+ people waiting...</p>
           <p className="footer-text">
             Elevate the client experience with Fortuna & upgrade your backoffice.
           </p>
