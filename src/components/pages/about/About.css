@@ -279,11 +279,11 @@
 
 
 /* General responsive settings */
-body {
+/* body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 .Aboutmain,
 .Aboutsec1,
@@ -373,15 +373,15 @@ body {
   .fancy button,
   .fancy1 button {
     font-size: 0.9rem;
-    padding: 0.8rem;
+    padding: 4px;
   }
 
 
   .Aboutsec4 .values p  {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  .footer-text{
-    font-size: 1.2em;
+  .footer-text p{
+    font-size: 1.0em;
   }
 }
 

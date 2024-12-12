@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import Home from './components/pages/home/Home'
 import Contact from './components/pages/contact/ContactForm'
 import About from './components/pages/about/About'
@@ -9,10 +9,17 @@ import CustomNavbar from './components/navbar/Navbar'
 function App() {
   return (
 
-    <div>
+    <BrowserRouter>
     <CustomNavbar/>
-   <Footer/>
-    </div>
+    <Routes>
+      <Route path="/"  element={<Home />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
+     
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
+ 
  
                 
   )

@@ -155,7 +155,7 @@ function Home() {
               className={styles["our-mission-container"]}
             >
               <div className={styles["title"]}>
-                <h2>Our mission</h2>
+                <h2>Our Mission</h2>
               </div>
 
               <div className={styles["two-contents"]}>
@@ -262,8 +262,7 @@ function Home() {
             className={styles["seventh-section"]}
           >
             <div className={styles["seventh-title"]}>
-              <p clas>Meet</p>
-              <h1>Finplus</h1>
+              <h1 clas>Meet Finplus</h1>
             </div>
             <div className={styles["seventh-desc"]}>
               <p>

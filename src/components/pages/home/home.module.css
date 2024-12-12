@@ -3,8 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12% 0%;
+  padding: 8% 0%;
   width: 100%;
+  /* margin-top: 1400px; */
+  color: white;
 }
 
 .hero-section {
@@ -33,6 +35,7 @@
   justify-content: flex-start;
   flex-shrink: 0;
   transform: none;
+  color: white;
 }
 
 .hero-content .hero-title h1 {
@@ -298,7 +301,7 @@
 }
 
 .two-contents .first h1 span {
-  color: #bab5b588;
+  color: #cacaca88;
 }
 
 .two-contents .second {
@@ -375,18 +378,18 @@
   transform: scale(0.953539);
 }
 
-.seventh-section .seventh-title p {
-  font-size: 21px;
-  text-align: center;
-  color: rgb(201, 201, 201);
-}
-
 .seventh-section .seventh-title h1 {
   font-size: 55px;
   text-align: center;
+  color: rgb(201, 201, 201);
+}
+/* 
+.seventh-section .seventh-title h2 {
+  font-size: 35px;
+  text-align: center;
   color: white;
   font-weight: 400;
-}
+} */
 
 .seventh-section .seventh-desc {
   display: flex;
@@ -555,7 +558,7 @@
   }
 
   .our-mission-section .title h2 {
-    font-size: 24px;
+    font-size: 55px;
     text-align: center;
   }
 

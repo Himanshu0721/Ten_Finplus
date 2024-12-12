@@ -89,9 +89,11 @@ function About() {
         <div className="values">
           <h3>Our values</h3>
           <p>Our goal is to empower advisors to be efficient, precise, productive, and client-focused for maximum impact.</p>
+          <p>Enhance client experiences with Finplus while streamlining and upgrading your back-office operations.</p>
+       
         </div>
         <div className="footer-text">
-          <p>Enhance client experiences with Finplus while streamlining and upgrading your back-office operations.</p>
+  
         </div>
       </div>
     </>
