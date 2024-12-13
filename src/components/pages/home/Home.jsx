@@ -2,6 +2,7 @@ import React from "react";
 import ParticlesBackground from "../../ParticlesBackground";
 import { motion } from "framer-motion";
 import styles from "./home.module.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   const lists = [
@@ -93,7 +94,9 @@ function Home() {
                   whileTap={{ scale: 0.9 }}
                   className={styles["fancy"]}
                 >
+                  <Link to ="/Contact">
                   <button>Get early access</button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
@@ -314,7 +317,9 @@ function Home() {
                 whileTap={{ scale: 0.9 }}
                 className={styles["fancy"]}
               >
+                <Link to ="/Contact">
                 <button>Contact us</button>
+                </Link>
               </motion.div>
             </div>
           </section>
