@@ -1,6 +1,6 @@
 import React from 'react';
 import ParticlesBackground from '../../ParticlesBackground';
-import './about.css';
+import './About.css';
 import { Link } from "react-router-dom";
 
 
