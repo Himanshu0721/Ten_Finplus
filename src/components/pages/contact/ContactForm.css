@@ -1,25 +1,16 @@
 
-/* 
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: 800px;
-    flex-direction: column;
-  } */
+
   
   .container {
     position: sticky;
     z-index: 1;
-    /* background-color: rgba(0, 0, 0, 0.8);  */
+  
     padding: 20px;
     border-radius: 10px;
     max-width: 1600px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin-top: 3%;
+    margin-bottom: 20px;
 
     gap: 20px;
     height: min-content;
@@ -49,17 +40,16 @@
     font-size: 14px;
     background-color: #888888;
   }
-  /* Placeholder styling for select elements */
+  
 .contact-form select:invalid {
-  color: #b7b4b4; /* Placeholder color */
+  color: #b7b4b4; 
 }
 
-/* Ensuring selected options are visible */
 .contact-form select {
-  color: white; /* Text color for selected option */
+  color: white; 
 }
 
-/* Adjust focus behavior */
+
 .contact-form select:focus {
   outline: 2px solid #333333; 
 }
@@ -79,9 +69,11 @@
   
   .bottom-section {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    padding-bottom: 50px;
     color: white;
     position: relative;
+    z-index: 0;
   }
   
   .waiting {
@@ -107,7 +99,7 @@
   
   .footer-text {
     text-align: center;
-    margin-top: 157px;
+    margin-top: 50px;
     font-size: 2rem;
     font-weight: 400;
     color: #ffffff;
@@ -115,64 +107,23 @@
   }
   
   /* Media Queries */
-  @media screen and (min-width: 1440px) and (max-width: 1500px) {
-    .container {
-      width: 85%;
-      padding: 20px;
-      max-height: 85vh;
-      margin-left: 7.5%; /* Center alignment adjustment */
-    }
-  
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      font-size: 16px;
-    }
-  
-    .contact-form button {
-      font-size: 14px;
-    }
-  
-    .footer-text {
-      font-size: 1.7rem;
-      margin-top: 20px;
-    }
-  }
-
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
-    .container {
-      width: 90%; /* Adjust container width */
-      padding: 20px;
-      max-height: 85vh; /* Maintain height proportion */
-      margin-left: 5%;
-    }
-  
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      font-size: 15px; /* Slightly larger inputs */
-    }
-  
-    .contact-form button {
-      font-size: 13px;
-    }
-  
-    .footer-text {
-      font-size: 1.6rem;
-      margin-top: 20px;
-    }
-  }
+ 
 
   @media screen and (max-width: 1024px) {
     .container {
-      width: 90%; 
+      width: 90%;
       padding: 15px;
-      max-height: 85vh; 
-      margin-left: 10px;
+      margin-bottom: 10px; /* Increase margin to accommodate footer */
+      margin-left: auto; /* Center align */
+      margin-right: auto; /* Center align */
     }
   
     .contact-form button {
       font-size: 12px;
+    }
+    .bottom-section {
+      margin-top: 30px; /* Add more space */
+      padding-bottom: 80px; /* Prevent overlap */
     }
   
     .footer-text {
@@ -185,9 +136,11 @@
     .container {
       width: 95%; 
       padding: 15px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
       
-      max-height: 85vh; 
-      margin-left: 10px;
+  
     }
   
     .contact-form button {
@@ -196,7 +149,7 @@
   
     .footer-text {
       font-size: 1.3rem;
-      margin-top: 10px;
+      margin-top: 20px;
     }
   }
   
@@ -204,8 +157,17 @@
     .container {
       width: 95%;
       padding: 10px;
-      max-height: 85vh; 
-      margin-left: 10px;
+      max-height: 85vh;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 410px; /* Increased to make room for the footer */
+    }
+  
+    .bottom-section {
+      margin-top: 20px;
+      padding-bottom: 80px; /* Added padding to ensure separation */
+      text-align: center;
+      color: white;
     }
   
     .footer-text {
@@ -213,4 +175,5 @@
       margin-top: 10px;
     }
   }
+  
   
