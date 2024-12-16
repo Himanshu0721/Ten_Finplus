@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function CustomNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get current route
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
 
+  const getLinkClass = (path) =>
+    location.pathname === path
+      ? "text-white" // Active style
+      : " font-small"; // Inactive style
+
   return (
     <Navbar className="custom-navbars" expand="lg">
       <Navbar.Brand href="/">
-      <svg preserveAspectRatio="xMidYMid meet" data-bbox="0.36 0.279 243.208 201.268" viewBox="0 0 243.913 201.792" height="100" width="100" xmlns="http://www.w3.org/2000/svg" data-type="ugc" role="presentation" aria-hidden="true">
+      <svg preserveAspectRatio="xMidYMid meet" data-bbox="0.36 0.279 243.208 201.268" viewBox="0 0 243.913 201.792" height="100.792" width="100" xmlns="http://www.w3.org/2000/svg" data-type="ugc" role="presentation" aria-hidden="true">
     <g>
         <g opacity=".86">
             <path strokeWidth=".5" strokeMiterlimit="10" stroke="#e9b00d" fill="#e9b00d" d="M139.358 159.816s5.42-26.187 27.014-38.576a13.973 13.973 0 0 0 4.065-3.52l23.864-30.639a11.721 11.721 0 0 1 12.02-4.417c4 1 7.321 4.083 4.681 12.319-5.28 16.6-22.368 36.711-22.368 36.711s.51 6.036 4.769 1.513 18.549-27.665 18.549-27.665l7.515-14.255a11.879 11.879 0 0 0 1.32-4.417l2.534-26.574 2.816-17.282a9.292 9.292 0 0 1 2.851-5.4c3.52-3.238 10.066-7.039 13.445 5.086 3.8 13.6-2.921 53.87-5.808 69.691a29.2 29.2 0 0 1-5.086 11.862c-8.06 11.087-27.208 36.8-42.659 52.444v21.858a2.992 2.992 0 0 1-2.992 2.992h-42.8a1.531 1.531 0 0 1-1.549-1.426z"></path>
@@ -26,21 +33,18 @@ function CustomNavbar() {
     </g>
 </svg>
         <div className="ten">
-          <span
-            
-          >
-            TEN FINPLUS
-          </span>
+          <span>TEN FINPLUS</span>
         </div>
       </Navbar.Brand>
 
       {/* Toggle Button */}
       <Navbar.Toggle
-  aria-controls="navbar-nav"
-  className={`bg-black text-white p-2 z-40 border-none ${menuOpen ? 'toggle-cross' : ''}`}
-  onClick={toggleMenu}
->
-
+        aria-controls="navbar-nav"
+        className={`bg-black text-white p-2 z-40 border-none ${
+          menuOpen ? "toggle-cross" : ""
+        }`}
+        onClick={toggleMenu}
+      >
         <svg
           className="w-6 h-6 text-white z-50"
           fill="none"
@@ -62,35 +66,52 @@ function CustomNavbar() {
       </Navbar.Toggle>
 
       {!menuOpen && (
-    <Navbar.Collapse id="navbar-nav">
-      <Nav className="ms-auto text-right">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About</Nav.Link>
-        <Nav.Link href="/contact" className="waitlist">
-          Join Waitlist
-        </Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  )}
+        <Navbar.Collapse id="navbar-nav">
+          <Nav className="ms-auto text-right">
+            <Nav.Link
+              href="/"
+              className={`${getLinkClass("/")} no-underline hover:no-underline focus:no-underline`}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="/about"
+              className={`${getLinkClass("/about")} no-underline hover:no-underline focus:no-underline`}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              href="/contact"
+              className={`waitlist ${getLinkClass("/contact")}`}
+            >
+              Join Waitlist
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      )}
 
       {/* Fullscreen Dropdown for Mobile */}
       {menuOpen && (
         <div className="fullscreen-dropdown">
           <Nav className="d-flex flex-column align-items-center justify-content-center">
-            <Nav.Link href="/" onClick={closeMenu} className="fullscreen-item">
+            <Nav.Link
+              href="/"
+              onClick={closeMenu}
+              className={`fullscreen-item ${getLinkClass("/")}`}
+            >
               Home
             </Nav.Link>
             <Nav.Link
               href="/about"
               onClick={closeMenu}
-              className="fullscreen-item"
+              className={`fullscreen-item ${getLinkClass("/about")}`}
             >
               About
             </Nav.Link>
             <Nav.Link
               href="/contact"
               onClick={closeMenu}
-              className="fullscreen-item waitlist"
+              className={`fullscreen-item waitlist ${getLinkClass("/contact")}`}
             >
               Join Waitlist
             </Nav.Link>

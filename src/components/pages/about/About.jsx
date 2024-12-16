@@ -1,6 +1,6 @@
 import React from 'react';
 import ParticlesBackground from '../../ParticlesBackground';
-import './about.css';
+import './About.css';
 import { Link } from "react-router-dom";
 
 
@@ -13,7 +13,7 @@ function About() {
         Finplus empowers breakaway advisors with cutting-edge tools and technology to enhance client experiences, cut expenses, and boost efficiency.
         </p>
         <div className='fancy'>
-        <Link to="/">
+        <Link to="/contact">
           <button >Get Early Access</button>
         </Link>
         </div>
